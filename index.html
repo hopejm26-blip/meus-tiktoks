@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meus TikToks</title>
+  <meta name="description" content="Landing simples com links para contas do TikTok." />
+  <meta name="theme-color" content="#f8f4ff" />
+  <style>
+    :root{
+      --bg: #f8f4ff;
+      --primary: #9f7aea;
+      --primary-hover: #805ad5;
+      --accent: #6b46c1;
+      --text: #111827;
+      --button-width: 220px;
+      --radius: 20px;
+      --gap: 12px;
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+
+    html,body{height:100%}
+
+    body {
+      margin: 0;
+      font-family: "Arial", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+      min-height:100vh; /* evita problemas em dispositivos com barra de endereço */
+    }
+
+    /* skip link for keyboard users */
+    .skip-link{
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus{
+      left: 12px;
+      top: 12px;
+      width: auto;
+      height: auto;
+      padding: 8px 12px;
+      background:#111;
+      color:#fff;
+      border-radius:6px;
+      z-index:1000;
+    }
+
+    main{
+      width:100%;
+      max-width:480px;
+      text-align:center;
+    }
+
+    h1 {
+      font-size:1.25rem;
+      color: var(--accent);
+      margin: 0 0 20px;
+    }
+
+    nav ul.links{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap: var(--gap);
+    }
+
+    nav ul.links li{
+      width:100%;
+      display:flex;
+      justify-content:center;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 14px 20px;
+      width: var(--button-width);
+      max-width:100%;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: var(--radius);
+      font-weight:700;
+      text-align:center;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      box-shadow: 0 6px 18px rgba(99,102,241,0.08);
+    }
+
+    a.button:hover{
+      background: var(--primary-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(99,102,241,0.12);
+    }
+
+    /* visible focus for keyboard users */
+    a.button:focus, a.button:focus-visible{
+      outline: 3px solid rgba(139,92,246,0.18);
+      outline-offset: 3px;
+      box-shadow: 0 0 0 4px rgba(159,122,234,0.12);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      a.button, a.button:hover { transition: none; transform:none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <main id="main" role="main" aria-labelledby="pageTitle">
+    <h1 id="pageTitle">Escolha uma conta TikTok</h1>
+
+    <nav aria-label="Contas do TikTok">
+      <ul class="links">
+        <li>
+          <a
+            class="button"
+            href="https://www.tiktok.com/@sagesonserina?_r=1&_t=ZS-91DY3Ku0LKe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Sage Sonserina</a>
+        </li>
+
+        <li>
+          <a
+            class="button"
+            href="https://www.tiktok.com/@sra.astoria?_r=1&_t=ZS-91DXwYtv9Eb"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Sra. Astoria</a>
+        </li>
+      </ul>
+    </nav>
+  </main>
+</body>
+</html>
